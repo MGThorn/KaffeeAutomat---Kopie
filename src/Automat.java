@@ -1,11 +1,13 @@
+import javax.swing.ImageIcon;
 
 public class Automat {
 
-	public int zustand;
+	private int zustand;
 	
-	public int wasserStand;
-	public int bohnenStand;
-	public int milchStand;
+	private int wasserStand;
+	private int bohnenStand;
+	private int milchStand;
+	private Window w;
 
 	Automat(){
 		wasserStand = 100;
@@ -16,13 +18,30 @@ public class Automat {
 		
 	}
 
+	public void setWindow(Window w){
+		this.w = w;
+	}
+
 
 	public void zustandWechseln(char eingabe) {
 		switch (zustand) {
 		case 0: {
 			switch (eingabe) {
-			case 'y': {zustand = 1;} break;
-			case 'n': {zustand = 0;} break;
+			case 'y': {
+				zustand = 1;
+				w.onButton.setIcon(new ImageIcon(w.on_img));
+				w.cup.setVisible(true);		
+				w.on = 'n';
+			} break;
+			case 'n': {
+				zustand = 0;
+				w.onButton.setIcon(new ImageIcon(w.off_img));	
+				w.cup.setVisible(false);
+				w.on = 'y';
+			} break;
+			default:{
+				w.on = 'y';
+			}
 			}
 		} break;
 		case 1: {

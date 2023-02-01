@@ -34,11 +34,10 @@ public class Window
   Image off_img;
 
   Automat automat;
-  int zustand;
+  char on;
 
-  Window() throws IOException{
+  public void start() throws IOException{
     //init Automat
-    automat = new Automat();
 
     //init rest TODO rest
     init();
@@ -48,6 +47,9 @@ public class Window
       refreshScreen();
     }
 
+  }
+  public void setAutomat(Automat a){
+    this.automat = a;
   }
 
   private void refreshScreen() {
@@ -99,30 +101,14 @@ public class Window
     pane.add(cup);
 
     onButton = new CButton(250,500,50,50,this.off_img,new ActionListener(){  
-      boolean on;
       public void actionPerformed(ActionEvent e){  
-        if(on) {
-          on=false;
-          onButton.setIcon(new ImageIcon(off_img));
-        }else{
-          on=true;
-          onButton.setIcon(new ImageIcon(on_img));
-        }
-        cup.setVisible(on);
+        automat.zustandWechseln(on);
       }  
       });
     pane.add(onButton);
 
     button1 = new CButton(300,185,50,50,this.milk_img,new ActionListener(){  
-      boolean on;
       public void actionPerformed(ActionEvent e){  
-        if(on) {
-          on=false;
-          button1.setIcon(new ImageIcon(off_img));
-        }else{
-          on=true;
-          button1.setIcon(new ImageIcon(on_img));
-        }
       }  
       });
     pane.add(button1);
