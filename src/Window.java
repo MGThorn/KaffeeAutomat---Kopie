@@ -34,7 +34,7 @@ public class Window
   Image off_img;
 
   Automat automat;
-  char on;
+  char on = 'y';
 
   public void start() throws IOException{
     //init Automat
@@ -59,7 +59,7 @@ public class Window
   private void init() throws IOException {
     frame = new JFrame();
     //init img
-    background = ImageIO.read(new File("rsc\\background.jpg"));
+    background = ImageIO.read(new File("rsc\\background.png"));
     cup_img = ImageIO.read(new File("rsc\\Cup.png"));
     milk_img = ImageIO.read(new File("rsc\\Milk.jfif"));
     coffee_img = ImageIO.read(new File("rsc\\coffee.jfif"));
@@ -107,16 +107,25 @@ public class Window
       });
     pane.add(onButton);
 
-    button1 = new CButton(300,185,50,50,this.milk_img,new ActionListener(){  
+    button1 = new CButton(200,185,50,50,this.milk_img,new ActionListener(){  
       public void actionPerformed(ActionEvent e){  
+
       }  
       });
     pane.add(button1);
 
-    button2 = new CButton(250,185,50,50,this.cup_img,null);
+    button2 = new CButton(250,185,50,50,this.cup_img,new ActionListener(){  
+      public void actionPerformed(ActionEvent e){  
+
+      }  
+      });
     pane.add(button2);
 
-    button3 = new CButton(200,185,50,50,this.cup_img,null);
+    button3 = new CButton(300,185,50,50,this.cup_img,new ActionListener(){  
+      public void actionPerformed(ActionEvent e){  
+
+      }  
+      });
     pane.add(button3);
 
     milkButton = new CButton(550,185,70,300,milk_img,new ActionListener(){  

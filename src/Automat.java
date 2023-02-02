@@ -32,6 +32,10 @@ public class Automat {
 				w.onButton.setIcon(new ImageIcon(w.on_img));
 				w.cup.setVisible(true);		
 				w.on = 'n';
+				w.txtOutput.setText("refiled Coffeebeans?");
+				w.button2.setVisible(false);
+				w.button3.setIcon(new ImageIcon(w.off_img));
+				w.button1.setIcon(new ImageIcon(w.on_img));
 			} break;
 			case 'n': {
 				zustand = 0;
@@ -39,15 +43,18 @@ public class Automat {
 				w.cup.setVisible(false);
 				w.on = 'y';
 			} break;
-			default:{
-				w.on = 'y';
-			}
 			}
 		} break;
 		case 1: {
 			switch (eingabe) {
-			case 'y': {zustand = 2;} break;
-			case 'n': {zustand = 1;} break;
+			case 'y': {
+				zustand = 2;
+			
+			} break;
+			case 'n': {
+				zustand = 1;
+			
+			} break;
 			}
 		} break;
 		case 2: {
