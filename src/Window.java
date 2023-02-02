@@ -62,8 +62,8 @@ public class Window
     background = ImageIO.read(new File("rsc\\background.png"));
     cup_img = ImageIO.read(new File("rsc\\Cup.png"));
     milk_img = ImageIO.read(new File("rsc\\Milk.jfif"));
-    coffee_img = ImageIO.read(new File("rsc\\coffee.jfif"));
-    water_img = ImageIO.read(new File("rsc\\Water.jfif"));
+    coffee_img = ImageIO.read(new File("rsc\\coffee.png"));
+    water_img = ImageIO.read(new File("rsc\\Water.png"));
     on_img = ImageIO.read(new File("rsc\\On.png"));
     off_img = ImageIO.read(new File("rsc\\Off.png"));
     
@@ -86,7 +86,7 @@ public class Window
 
     
     txtOutput = new JLabel();
-    txtOutput.setBounds(210,165,150,25);
+    txtOutput.setBounds(205,165,150,25);
     txtOutput.setText("null");
     txtOutput.setVisible(true);
     txtOutput.setOpaque(true);
@@ -107,21 +107,21 @@ public class Window
       });
     pane.add(onButton);
 
-    button1 = new CButton(200,185,50,50,this.milk_img,new ActionListener(){  
+    button1 = new CButton(205,185,50,50,this.milk_img,new ActionListener(){  
       public void actionPerformed(ActionEvent e){  
 
       }  
       });
     pane.add(button1);
 
-    button2 = new CButton(250,185,50,50,this.cup_img,new ActionListener(){  
+    button2 = new CButton(255,185,50,50,this.cup_img,new ActionListener(){  
       public void actionPerformed(ActionEvent e){  
 
       }  
       });
     pane.add(button2);
 
-    button3 = new CButton(300,185,50,50,this.cup_img,new ActionListener(){  
+    button3 = new CButton(305,185,50,50,this.cup_img,new ActionListener(){  
       public void actionPerformed(ActionEvent e){  
 
       }  
